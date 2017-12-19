@@ -169,6 +169,7 @@ void Searcher::search(std::string& search,
         zims.push_back((*current)->getZimFileHandler());
       }
       zim::Search* search = new zim::Search(zims);
+      search->set_verbose(verbose);
       search->set_query(unaccentedSearch);
       search->set_range(resultStart, resultEnd);
       internal->_search = search;
@@ -228,6 +229,7 @@ void Searcher::geo_search(float latitude, float longitude, float distance,
     zims.push_back((*current)->getZimFileHandler());
   }
   zim::Search* search = new zim::Search(zims);
+  search->set_verbose(verbose);
   search->set_query("");
   search->set_georange(latitude, longitude, distance);
   search->set_range(resultStart, resultEnd);
@@ -290,6 +292,7 @@ void Searcher::suggestions(std::string& search, const bool verbose)
       zims.push_back((*current)->getZimFileHandler());
     }
     zim::Search* search = new zim::Search(zims);
+    search->set_verbose(verbose);
     search->set_query(unaccentedSearch);
     search->set_range(resultStart, resultEnd);
     search->set_suggestion_mode(true);
