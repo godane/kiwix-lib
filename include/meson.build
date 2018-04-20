@@ -2,7 +2,6 @@ headers = [
   'library.h',
   'manager.h',
   'opds_dumper.h',
-  'downloader.h',
   'reader.h',
   'searcher.h'
 ]
